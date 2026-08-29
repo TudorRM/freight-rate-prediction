@@ -1,0 +1,73 @@
+--- Shape ---
+(48000, 14)
+
+--- Info ---
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 48000 entries, 0 to 47999
+Data columns (total 14 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   load_id       48000 non-null  object 
+ 1   pickup        48000 non-null  object 
+ 2   delivery      48000 non-null  object 
+ 3   pickup_lat    48000 non-null  float64
+ 4   pickup_lon    48000 non-null  float64
+ 5   delivery_lat  48000 non-null  float64
+ 6   delivery_lon  48000 non-null  float64
+ 7   distance      48000 non-null  float64
+ 8   equipment     48000 non-null  object 
+ 9   weight        47700 non-null  float64
+ 10  date          48000 non-null  object 
+ 11  market_index  47626 non-null  float64
+ 12  quote_signal  48000 non-null  float64
+ 13  posted_rate   48000 non-null  float64
+dtypes: float64(9), object(5)
+memory usage: 5.1+ MB
+None
+
+--- Describe ---
+                count          mean          std          min          25%          50%           75%          max
+pickup_lat    48000.0     35.647545     4.315285     28.35765     31.98691     35.29479     39.411040     44.30296
+pickup_lon    48000.0    -90.928964    13.482431   -121.69849    -98.40059    -88.08915    -83.285060    -69.50000
+delivery_lat  48000.0     35.641175     4.317199     28.35765     31.98691     35.29479     39.411040     44.30296
+delivery_lon  48000.0    -90.857310    13.476589   -121.69849    -98.40059    -87.52871    -83.285060    -69.50000
+distance      48000.0   1135.856654   728.564416     70.00000    550.40000    953.30000   1645.525000   3439.80000
+weight        47700.0  31028.844004  9391.440620 -47500.00000  25800.00000  31436.50000  37018.000000  47500.00000
+market_index  47626.0      1.083387     0.168091      0.67639      0.94967      1.05580      1.219590      1.46778
+quote_signal  48000.0      2.062468     0.291391      0.69228      1.89103      2.05575      2.221685      3.61035
+posted_rate   48000.0   2373.980682  1486.493245     57.22000   1251.55500   2030.76000   3330.750000  25533.00000
+
+--- Anomaly Checks ---
+posted rate <= 0: 0
+distance <= 0: 0
+weight <= 0: 292
+
+--- Categorical ---
+Equipment: ['Dry Van' 'Reefer' 'Flatbed']
+Unique pickup: 64
+Unique delivery: 64
+
+--- Dates ---
+Min date: 2025-01-01 00:00:00
+Max date: 2025-10-31 00:00:00
+
+
+
+
+Dimensiune set de date
+Setul conține 48.000 de curse (rânduri) și 14 coloane.
+
+Structură și valori lipsă
+weight are 300 de valori lipsă (47.700 prezente din 48.000).
+market_index are 374 de valori lipsă (47.626 prezente din 48.000).
+
+Statistici și anomalii
+weight conține valori negative (minimul este $-47.500$), existând 292 de rânduri cu valori sub sau egale cu 0. Aceasta este o eroare clară de date (greutatea nu poate fi negativă).
+posted_rate (prețul) și distance nu au valori invalide ($\le 0$). Prețul mediu este de ~$2.374, dar ajunge la un maxim de $25.533.
+
+Date categorice
+Există doar 3 tipuri de echipament (Dry Van, Reefer, Flatbed).
+Sunt înregistrate 64 de locații unice de plecare (pickup) și 64 de sosire (delivery).
+
+Perioadă temporală
+Datele acoperă 10 luni, între 1 Ianuarie 2025 și 31 Octombrie 2025.
