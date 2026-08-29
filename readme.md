@@ -23,3 +23,21 @@ The scorer validates both files and creates `scorer_results/candidate_december.p
 - `validation_predictions.csv`
 - PDF or DOCX report containing your validation, data split approach and `candidate_december.png`
 - 2-3 minute Loom link
+
+
+
+
+
+## Progress Log
+
+### Day 1: Project Setup & EDA
+
+**Task Understanding**
+* Goal: Predict freight rate (`posted_rate`) for December loads.
+* Strategy: EDA -> Data Cleaning & Feature Engineering -> Baseline Model.
+
+**EDA Observations**
+* Dataset: 48,000 rows, 14 columns (Jan – Oct 2025).
+* Missing Data: 300 in `weight`, 374 in `market_index`.
+* Anomalies: 292 negative values in `weight` (min -47,500 lbs).
+* Categoricals: 3 equipment types, 64 unique pickup & delivery locations.
