@@ -41,3 +41,17 @@ The scorer validates both files and creates `scorer_results/candidate_december.p
 * Missing Data: 300 in `weight`, 374 in `market_index`.
 * Anomalies: 292 negative values in `weight` (min -47,500 lbs).
 * Categoricals: 3 equipment types, 64 unique pickup & delivery locations.
+
+### Day 2: Data Cleaning & Feature Engineering
+
+**Tasks Completed**
+* Fixed 292 negative `weight` values using absolute values (`abs()`).
+* Imputed missing `weight` values using the median weight grouped by `equipment` type.
+* Imputed missing `market_index` values using the global median.
+* Extracted temporal features: `month`, `day_of_week`, and `is_weekend`. Omitted `year` due to zero variance (all data is from 2025).
+* Applied One-Hot Encoding to categorical `equipment` types (`equip_*`).
+* Saved the cleaned dataset to `data/processed_train_test.csv`.
+
+**Pipeline Output**
+* Processed Dataset: 48,000 rows, 20 columns.
+* Missing Values: 0 across all features.

@@ -71,3 +71,13 @@ Sunt înregistrate 64 de locații unice de plecare (pickup) și 64 de sosire (de
 
 Perioadă temporală
 Datele acoperă 10 luni, între 1 Ianuarie 2025 și 31 Octombrie 2025.
+
+
+
+
+
+
+Feature engineering completed!
+New shape: (48000, 20)
+Remaining missing values: 0
+
