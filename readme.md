@@ -55,3 +55,14 @@ The scorer validates both files and creates `scorer_results/candidate_december.p
 **Pipeline Output**
 * Processed Dataset: 48,000 rows, 20 columns.
 * Missing Values: 0 across all features.
+
+### Day 3: Baseline Model (Random Forest)
+
+**Tasks Completed**
+* Built baseline model using `RandomForestRegressor` (`src/03_train_rf.py`).
+* Split data 80/20 into train and validation sets.
+* Trained on distance, weight, GPS coordinates, market index, and equipment features.
+
+**Model Performance**
+* **Validation MAE:** $130.00
+* **Validation RMSE:** $568.21

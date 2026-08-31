@@ -81,3 +81,8 @@ Feature engineering completed!
 New shape: (48000, 20)
 Remaining missing values: 0
 
+
+Done data split)
+Training ...
+Validation RMSE: 568.2128
+Validation MAE: 130.0003
